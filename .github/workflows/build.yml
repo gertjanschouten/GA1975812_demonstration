@@ -11,7 +11,7 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
       - name: Create test file
-        run: echo "Hello" > test.txt
+        run: date +%s > test.txt
       - name: Push test file
         run: |
           git config --global user.name "gertjanschouten"
