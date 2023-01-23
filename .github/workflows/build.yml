@@ -9,14 +9,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          token: ${{ secrets.PERSONAL_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Create test file
         run: date +%s > test.txt
       - name: Push test file
         run: |
           git config --global user.name "gertjanschouten"
           git config --global user.email "gertjanschouten@users.noreply.github.com"
-          git remote set-url origin https://${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git add -A
           git commit -am "Commit test.txt"
           git push
