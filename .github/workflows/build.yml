@@ -1,0 +1,20 @@
+name: build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Create test file
+        run: |
+          echo "Hello" > test.txt
+          git add .
+      - name: Push test file
+        run: |
+          git config user.name "Auto Committer"
+          git config user.email "auto_committer@users.noreply.github.com"
+          git commit test.txt -m "Commit test.txt"
+          git push
