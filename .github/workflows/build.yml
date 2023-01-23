@@ -15,5 +15,6 @@ jobs:
           git config --global user.name "GJ Schouten"
           git config --global user.email "gj-schouten@users.noreply.github.com"
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git add -A
           git commit -am "Commit test.txt"
           git push
