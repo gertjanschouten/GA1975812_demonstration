@@ -12,10 +12,9 @@ jobs:
         run: echo "Hello" > test.txt
       - name: Push test file
         run: |
-          git config --global user.name "GJ Schouten"
-          git config --global user.email "gj-schouten@users.noreply.github.com"
-          echo "https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }}"
-          git remote set-url origin https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/${{ github.repository }}
+          git config --global user.name "gertjanschouten"
+          git config --global user.email "gertjanschouten@users.noreply.github.com"
+          git remote set-url origin https://x-access-token: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@github.com/${{ github.repository }}
           git add -A
           git commit -am "Commit test.txt"
           git push
