@@ -14,7 +14,8 @@ jobs:
           git add .
       - name: Push test file
         run: |
-          git config user.name "Auto Committer"
-          git config user.email "auto_committer@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git commit test.txt -m "Commit test.txt"
           git push
